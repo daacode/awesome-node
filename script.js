@@ -1,11 +1,23 @@
 const fs = require("fs");
+// 1 - What floor does santa end up on
+// ( --> should go UP floor
+// ) --> should go DOWN 1 floor
 
-fs.readFile("./hello.txt", (err, data) => {
-  if (err) {
-    console.log("errrrooorrr");
-  }
-  console.log("1", data.toString());
-});
+function question1() {
+  fs.readFile("./santa.txt", (err, data) => {
+    console.time("santa-time");
+    const directions = data.toString();
+    const directionsArray = directions.split("");
+    const answer = directionsArray.reduce((acc, currentValue) => {
+      if (currentValue === "(") {
+        return (acc += 1);
+      } else if (currentValue === ")") {
+        return (acc -= 1);
+      }
+    }, 0);
+    console.timeEnd("santa-time");
+    console.log("floor:", answer);
+  });
+}
 
-const file = fs.readFileSync("./hello.txt");
-console.log("2", file.toString());
+question1();

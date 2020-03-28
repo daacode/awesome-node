@@ -1,3 +1,5 @@
+// An Example from the Advent of code
+// David Adeneye Abiodun
 const fs = require("fs");
 // 1 - What floor does santa end up on
 // ( --> should go UP floor

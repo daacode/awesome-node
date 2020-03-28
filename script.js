@@ -21,3 +21,11 @@ function question1() {
 }
 
 question1();
+
+// 2 - when does santa first enter the basement
+function Question2() {
+  fs.readFile("./santa.txt", (err, data) => {
+    const directions = data.toString();
+    const directionsArray = directions.split("");
+  });
+}
